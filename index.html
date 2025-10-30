@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>CICAL Burn History</title>
+<title>🔥 CICAL Friday Blaze: Burn History</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   body {
@@ -13,6 +13,7 @@
     animation: gradientBG 15s ease infinite;
     color: #f3f4f6;
     min-height: 100vh;
+    padding: 2rem;
   }
   @keyframes gradientBG {
     0% { background-position: 0% 50%; }
@@ -20,73 +21,59 @@
     100% { background-position: 0% 50%; }
   }
   h1 { color: #f59e0b; font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 1rem; }
-  .burn-button { background: #f87171; color: #111827; padding: 0.75rem 1.5rem; font-weight: bold; border-radius: 0.75rem; cursor: pointer; transition: all 0.3s; }
-  .burn-button:hover { transform: scale(1.05); box-shadow: 0 0 20px #f87171, 0 0 40px #f87171; }
-  .popup { position: fixed; top: 50%; left: 50%; transform: translate(-50%, -50%);
-           background: rgba(31,41,55,0.95); color: #fff; padding: 20px; border-radius: 12px;
-           max-width: 400px; width: 90%; display: none; z-index: 50; }
-  .popup.show { display: block; }
-  .popup button { margin-top: 10px; background: #f59e0b; color: #111827; padding: 5px 10px; font-weight: bold; border-radius: 6px; cursor: pointer; }
-  table { width: 100%; border-collapse: collapse; margin-top: 1rem; }
-  th, td { padding: 0.5rem; border-bottom: 1px solid #374151; text-align: center; }
+  table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
+  th, td { padding: 0.5rem; border-bottom: 1px solid #374151; text-align: center; white-space: nowrap; }
   th { color: #f59e0b; }
-  td { color: #d1d5db; }
+  td { color: #d1d5db; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
+  .largest { background-color: rgba(245, 158, 11, 0.2); border-radius: 6px; }
+  a { color: #3b82f6; text-decoration: underline; }
+  a:hover { color: #60a5fa; }
+  .logo { display: block; margin: 0 auto 1rem auto; width: 120px; height: 120px; border-radius: 50%; }
 </style>
 </head>
-<body class="flex flex-col items-center py-12">
+<body>
 
-<h1>🔥 CICAL Burn History 🔥</h1>
+<img src="https://turquoise-negative-scorpion-35.mypinata.cloud/ipfs/bafkreih5fz6opoiwvg5f2joqzfbusgo2jhe3qndmvcc4cmp7r473pnifve" 
+     alt="CICAL Logo" class="logo">
 
-<p class="text-center mb-6 max-w-xl">Track every Friday burn and automatic burns from $CICAL transactions. Click the button below to see full history.</p>
+<h1>🔥 CICAL Friday Blaze: Burn History 🔥</h1>
 
-<button id="burnButton" class="burn-button mb-8">🔥 View Burn History</button>
+<p class="text-center mb-6 max-w-xl mx-auto">
+Track every Friday burn and automatic burns from $CICAL transactions. 🔥 Links lead directly to BscScan for verification.
+</p>
 
-<!-- Popup -->
-<div id="burnPopup" class="popup">
-  <h2 class="text-amber-400 font-bold mb-2">🔥 Burn History</h2>
-  <table>
-    <thead>
-      <tr>
-        <th>Date</th>
-        <th>Burn Type</th>
-        <th>Amount Burned</th>
-        <th>Current Supply</th>
-      </tr>
-    </thead>
-    <tbody id="burnTableBody">
-      <!-- Entries akan diisi oleh JS -->
-    </tbody>
-  </table>
-  <button onclick="closeBurnPopup()">Close</button>
-</div>
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Burn Type</th>
+      <th>Amount Burned</th>
+      <th>Current Supply</th>
+      <th>Burn Proof</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr class="largest">
+      <td>2025-11-01</td>
+      <td>🔥 Auto Burn</td>
+      <td>68,628,604 CICAL</td>
+      <td>931,371,395 CICAL</td>
+      <td><a href="https://bscscan.com/tx/XXXXX" target="_blank">View</a></td>
+    </tr>
+    <tr>
+      <td>2025-11-01</td>
+      <td>🔥 First Friday Blaze</td>
+      <td>50,000,000 CICAL</td>
+      <td>931,371,395 CICAL (Coming Soon)</td>
+      <td><a href="#">Coming Soon</a></td>
+    </tr>
+    <!-- Tambahkan entry baru tiap minggu -->
+  </tbody>
+</table>
 
 <footer class="mt-16 py-6 text-center text-gray-300 text-sm w-full">
   © 2025 CICAL Project — Transparency. Community. Growth. 💫
 </footer>
-
-<script>
-  const burnButton = document.getElementById('burnButton');
-  const burnPopup = document.getElementById('burnPopup');
-  const burnTableBody = document.getElementById('burnTableBody');
-
-  const burnHistory = [
-    {date: "2025-11-01", type: "Auto Burn", amount: "68,628,604 CICAL", supply: "931,371,395 CICAL"},
-    {date: "2025-11-01", type: "First Friday Blaze", amount: "50,000,000 CICAL", supply: "931,371,395 CICAL (Coming Soon)"},
-    // Tambahkan entry berikutnya setiap minggu
-  ];
-
-  burnButton.addEventListener('click', () => {
-    burnTableBody.innerHTML = '';
-    burnHistory.forEach(entry => {
-      const tr = document.createElement('tr');
-      tr.innerHTML = `<td>${entry.date}</td><td>${entry.type}</td><td>${entry.amount}</td><td>${entry.supply}</td>`;
-      burnTableBody.appendChild(tr);
-    });
-    burnPopup.classList.add('show');
-  });
-
-  function closeBurnPopup() { burnPopup.classList.remove('show'); }
-</script>
 
 </body>
 </html>
