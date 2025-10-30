@@ -21,31 +21,40 @@
     100% { background-position: 0% 50%; }
   }
   .logo { display: block; margin: 0 auto 1rem auto; width: 200px; height: auto; }
-  h1 { color: #f59e0b; font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem; }
-  p.description { text-align: center; max-width: 700px; margin: 0 auto 2rem auto; color: #d1d5db; font-size: 1.1rem; }
-  
+  h1 { color: #f59e0b; font-size: 2rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem; }
+  p.description { text-align: center; max-width: 700px; margin: 0 auto 2rem auto; color: #d1d5db; font-size: 0.9rem; }
+
+  /* Burn info horizontal */
+  .burn-info-wrapper { overflow-x: auto; }
   .burn-info {
-    max-width: 1000px; 
-    margin: 0 auto; 
-    background-color: rgba(31, 41, 55, 0.9); 
-    padding: 1.5rem; 
-    border-radius: 12px; 
-    box-shadow: 0 0 15px #f59e0b; 
-    display: flex; 
-    flex-wrap: wrap; 
-    gap: 2rem;
-    justify-content: flex-start;
+    display: flex;
+    gap: 1rem;
+    padding: 1rem 1.5rem;
+    border-radius: 12px;
+    background-color: rgba(31,41,55,0.9);
+    box-shadow: 0 0 15px #f59e0b;
+    flex-wrap: nowrap;
+    font-size: 0.85rem;
   }
   .burn-item {
-    display: flex; 
-    flex-direction: row; 
-    gap: 0.5rem; 
-    align-items: center; 
+    display: flex;
+    flex-direction: row;
+    gap: 0.25rem;
+    align-items: center;
+    flex: 0 0 auto;
     white-space: nowrap;
   }
   .burn-item span.label { font-weight: bold; color: #f59e0b; }
   a { color: #3b82f6; text-decoration: underline; }
   a:hover { color: #60a5fa; }
+
+  /* Responsive font for smaller screens */
+  @media (max-width: 1280px) {
+    .burn-info { font-size: 0.75rem; gap: 0.5rem; }
+  }
+  @media (max-width: 768px) {
+    .burn-info { font-size: 0.7rem; }
+  }
 </style>
 </head>
 <body>
@@ -59,13 +68,15 @@
 Track weekly burns of $CICAL. Update the numbers manually each week to reflect automatic and Friday burns. Click BscScan for verification.
 </p>
 
-<div class="burn-info">
-  <div class="burn-item"><span class="label">📅 Date:</span> <span>2025-11-01</span></div>
-  <div class="burn-item"><span class="label">💰 Initial Supply:</span> <span>1,000,000,000 CICAL</span></div>
-  <div class="burn-item"><span class="label">🔥 Auto Burn:</span> <span>68,628,604 CICAL</span></div>
-  <div class="burn-item"><span class="label">🔥 Friday Burn:</span> <span>50,000,000 CICAL</span></div>
-  <div class="burn-item"><span class="label">💎 Current Supply:</span> <span>931,371,395 CICAL</span></div>
-  <div class="burn-item"><span class="label">⛓️ Burn Proof:</span> <span><a href="https://bscscan.com/tx/0x8747831a2b664785b6e7e87774fe4a45fcab3f443f7a77b276c0343fb554f331" target="_blank">View on BscScan</a></span></div>
+<div class="burn-info-wrapper">
+  <div class="burn-info">
+    <div class="burn-item"><span class="label">📅 Date:</span> <span>2025-11-01</span></div>
+    <div class="burn-item"><span class="label">💰 Initial Supply:</span> <span>1,000,000,000 CICAL</span></div>
+    <div class="burn-item"><span class="label">🔥 Auto Burn:</span> <span>68,628,604 CICAL</span></div>
+    <div class="burn-item"><span class="label">🔥 Friday Burn:</span> <span>50,000,000 CICAL</span></div>
+    <div class="burn-item"><span class="label">💎 Current Supply:</span> <span>931,371,395 CICAL</span></div>
+    <div class="burn-item"><span class="label">⛓️ Burn Proof:</span> <span><a href="https://bscscan.com/tx/0x8747831a2b664785b6e7e87774fe4a45fcab3f443f7a77b276c0343fb554f331" target="_blank">View on BscScan</a></span></div>
+  </div>
 </div>
 
 <footer class="mt-16 py-6 text-center text-gray-300 text-sm">
