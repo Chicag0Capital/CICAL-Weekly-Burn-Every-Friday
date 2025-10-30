@@ -3,14 +3,14 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>🔥 CICAL Friday Blaze: Burn History</title>
+<title>CICAL Friday Blaze - Burn Tracker</title>
 <script src="https://cdn.tailwindcss.com"></script>
 <style>
   body {
-    font-family: sans-serif;
+    font-family: 'Arial', sans-serif;
     background: linear-gradient(-45deg, #111827, #1f2937, #374151, #1e40af);
     background-size: 400% 400%;
-    animation: gradientBG 15s ease infinite;
+    animation: gradientBG 20s ease infinite;
     color: #f3f4f6;
     min-height: 100vh;
     padding: 2rem;
@@ -20,15 +20,14 @@
     50% { background-position: 100% 50%; }
     100% { background-position: 0% 50%; }
   }
-  h1 { color: #f59e0b; font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 1rem; }
-  table { width: 100%; border-collapse: collapse; margin-top: 2rem; }
-  th, td { padding: 0.5rem; border-bottom: 1px solid #374151; text-align: center; white-space: nowrap; }
-  th { color: #f59e0b; }
-  td { color: #d1d5db; display: flex; align-items: center; justify-content: center; gap: 0.5rem; }
-  .largest { background-color: rgba(245, 158, 11, 0.2); border-radius: 6px; }
+  .logo { display: block; margin: 0 auto 1rem auto; width: 200px; height: auto; }
+  h1 { color: #f59e0b; font-size: 2.5rem; font-weight: bold; text-align: center; margin-bottom: 0.5rem; }
+  p.description { text-align: center; max-width: 700px; margin: 0 auto 2rem auto; color: #d1d5db; font-size: 1.1rem; }
+  .burn-info { max-width: 600px; margin: 0 auto; background-color: rgba(31, 41, 55, 0.9); padding: 1.5rem; border-radius: 12px; box-shadow: 0 0 15px #f59e0b; }
+  .burn-item { display: flex; justify-content: space-between; margin-bottom: 0.75rem; font-size: 1.1rem; }
+  .burn-item span.label { font-weight: bold; color: #f59e0b; }
   a { color: #3b82f6; text-decoration: underline; }
   a:hover { color: #60a5fa; }
-  .logo { display: block; margin: 0 auto 1rem auto; width: 120px; height: 120px; border-radius: 50%; }
 </style>
 </head>
 <body>
@@ -36,42 +35,22 @@
 <img src="https://turquoise-negative-scorpion-35.mypinata.cloud/ipfs/bafkreih5fz6opoiwvg5f2joqzfbusgo2jhe3qndmvcc4cmp7r473pnifve" 
      alt="CICAL Logo" class="logo">
 
-<h1>🔥 CICAL Friday Blaze: Burn History 🔥</h1>
+<h1>🔥 CICAL Friday Blaze - Burn Tracker 🔥</h1>
 
-<p class="text-center mb-6 max-w-xl mx-auto">
-Track every Friday burn and automatic burns from $CICAL transactions. 🔥 Links lead directly to BscScan for verification.
+<p class="description">
+Track weekly burns of $CICAL. Update the numbers manually each week to reflect automatic and Friday burns. Click BscScan for verification.
 </p>
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Burn Type</th>
-      <th>Amount Burned</th>
-      <th>Current Supply</th>
-      <th>Burn Proof</th>
-    </tr>
-  </thead>
-  <tbody>
-    <tr class="largest">
-      <td>2025-11-01</td>
-      <td>🔥 Auto Burn</td>
-      <td>68,628,604 CICAL</td>
-      <td>931,371,395 CICAL</td>
-      <td><a href="https://bscscan.com/tx/XXXXX" target="_blank">View</a></td>
-    </tr>
-    <tr>
-      <td>2025-11-01</td>
-      <td>🔥 First Friday Blaze</td>
-      <td>50,000,000 CICAL</td>
-      <td>931,371,395 CICAL (Coming Soon)</td>
-      <td><a href="#">Coming Soon</a></td>
-    </tr>
-    <!-- Tambahkan entry baru tiap minggu -->
-  </tbody>
-</table>
+<div class="burn-info">
+  <div class="burn-item"><span class="label">📅 Date:</span> <span>2025-11-01</span></div>
+  <div class="burn-item"><span class="label">💰 Initial Supply:</span> <span>1,000,000,000 CICAL</span></div>
+  <div class="burn-item"><span class="label">🔥 Auto Burn:</span> <span>68,628,604 CICAL</span></div>
+  <div class="burn-item"><span class="label">🔥 Friday Burn:</span> <span>50,000,000 CICAL</span></div>
+  <div class="burn-item"><span class="label">💎 Current Supply:</span> <span>931,371,395 CICAL</span></div>
+  <div class="burn-item"><span class="label">⛓️ Burn Proof:</span> <span><a href="https://bscscan.com/tx/XXXXX" target="_blank">View on BscScan</a></span></div>
+</div>
 
-<footer class="mt-16 py-6 text-center text-gray-300 text-sm w-full">
+<footer class="mt-16 py-6 text-center text-gray-300 text-sm">
   © 2025 CICAL Project — Transparency. Community. Growth. 💫
 </footer>
 
